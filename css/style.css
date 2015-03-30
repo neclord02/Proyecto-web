@@ -159,12 +159,12 @@ footer{
 	
 	font-size:13px;
 	top: 3px;
-	width: 780px;
+	width: 762px;
 	margin: 3px auto;
 	overflow: hidden;
 	background-color: #000000;
 	color: white;
-	padding: 10px 10px;
+	padding: 5px 20px;
 }
 
 #formulario{
@@ -172,7 +172,7 @@ footer{
 	float:left;
 */
 	position:relative;
-	margin: 0 auto;
+	margin: 0px auto;
 	padding:0 100px;
 	
 }
@@ -219,6 +219,7 @@ h1{
 
 .logo{
 	
+	position:relative;
 	height: 100px;
 	width: 100px;
 	float: left;
@@ -652,8 +653,35 @@ ul.puntos {
 	
 }
 
-#slider{
+#error{
+
+	color:red;
 	
-	
-	
+}
+
+#visor {
+
+	width:400px;
+	height:100px;
+	position:relative;
+	float:right;
+	margin: 10px 0px 10px 0px;
+	overflow: hidden;
+
+}
+
+#cnt-imagenes{
+
+	position: absolute;
+	width:400px;
+	height:100px;
+
+}
+
+#banner {
+
+	width:400px;
+	height:100px;
+	float: top;
+
 }

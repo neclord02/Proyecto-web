@@ -8,15 +8,16 @@
 	<title>1º Congreso de CEIIE</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="icon" type="image/png" href="../image/fav.png" />
+	<script type="text/javascript" src="../jss/scripts.js"></script>
 </head>
 
-<body>
+<body onload="scripts:Carousel();">
   <div class="marco"> <!-- init marco -->
   	  <div class="startup"> <!-- init startup -->
         <div class ="header"> <!-- init header -->
             <div class="logo"> <!-- init logo -->
         
-              <img id="imglogo" src="../image/ISBWlogo.png" alt="Foto isbw"/>
+              <a href="index.html"><img id="imglogo" src="../image/ISBWlogo.png" alt="Foto isbw"/></a>
     
             </div> <!-- end logo -->
             
@@ -164,21 +165,25 @@
     
 </div>	<!-- end marco -->
 
-<footer>
-	
-    <img id="ugr" src="../image/logo.png" alt="Foto logo"/>
-    
-    <img id="etsiitfoot" src="../image/logo_etsiit.png" alt="Foto etsiit"/>
-    
-	<p>
-    C/Periodista Daniel Saucedo Aranda, s/n<br>
-	18071 GRANADA
-    </p>
-    
-	<p>
-    congreso_sibw@emaildelaetsiit.es<br>
-    Tlf: 998 345 654
-    </p>
-</footer>
+	<footer>
+	   <div id="visor">
+			<div id="cnt-imagenes">
+				<img id="banner" src="../image/banners/1.png">
+				<img id="banner" src="../image/banners/2.png">
+				<img id="banner" src="../image/banners/3.png">
+			</div>
+		</div>
+		
+		<p>
+		C/Periodista Daniel Saucedo Aranda, s/n<br>
+		18071 GRANADA
+		</p>
+		
+		<p>
+		congreso_sibw@emaildelaetsiit.es<br>
+		Tlf: 998 345 654
+		</p>
+	</footer>
+
 </body>
 </html>

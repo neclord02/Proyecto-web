@@ -11,13 +11,13 @@
     <script type="text/javascript" src="../jss/scripts.js"></script>
 </head>
 
-<body>
+<body onload="scripts:Carousel();">
   <div class="marco"> <!-- init marco -->
   	  <div class="startup"> <!-- init startup -->
         <div class ="header"> <!-- init header -->
             <div class="logo"> <!-- init logo -->
-        
-              <img id="imglogo" src="../image/ISBWlogo.png" alt="Foto isbw"/>
+ 
+              <a href="index.html"><img id="imglogo" src="../image/ISBWlogo.png" alt="Foto isbw"/></a>
     
             </div> <!-- end logo -->
             
@@ -84,7 +84,7 @@
 			<legend>Contacto</legend>
 			<input name="action" value="enviar" type="hidden"> Su nombre:<br>
 			<input name="nombre" size="30" type="text"><br> Su correo electrónico:<br>
-			<input name="email" size="30" type="text" id="email_content"><p id = "error"></p><br> Mensaje:<br>
+			<input name="email" size="30" type="text" id="email_content"><p id="error"></p><br> Mensaje:<br>
 			<textarea name="mensaje" rows="7" cols="75" id="mensaje">
 			</textarea><br>
 			<input value="Enviar" type="button" onClick="check()">
@@ -95,21 +95,25 @@
     
 </div>	<!-- end marco -->
 
-<footer>
-	
-    <img id="ugr" src="../image/logo.png" alt="Foto logo"/>
-    
-    <img id="etsiitfoot" src="../image/logo_etsiit.png" alt="Foto etsiit"/>
-    
-	<p>
-    C/Periodista Daniel Saucedo Aranda, s/n<br>
-	18071 GRANADA
-    </p>
-    
-	<p>
-    congreso_sibw@emaildelaetsiit.es<br>
-    Tlf: 998 345 654
-    </p>
-</footer>
+	<footer>
+	   <div id="visor">
+			<div id="cnt-imagenes">
+				<img id="banner" src="../image/banners/1.png">
+				<img id="banner" src="../image/banners/2.png">
+				<img id="banner" src="../image/banners/3.png">
+			</div>
+		</div>
+		
+		<p>
+		C/Periodista Daniel Saucedo Aranda, s/n<br>
+		18071 GRANADA
+		</p>
+		
+		<p>
+		congreso_sibw@emaildelaetsiit.es<br>
+		Tlf: 998 345 654
+		</p>
+	</footer>
+
 </body>
 </html>
