@@ -661,9 +661,9 @@ ul.puntos {
 
 #visor {
 
+	position:relative;
 	width:400px;
 	height:100px;
-	position:relative;
 	float:right;
 	margin: 10px 0px 10px 0px;
 	overflow: hidden;
@@ -672,7 +672,7 @@ ul.puntos {
 
 #cnt-imagenes{
 
-	position: absolute;
+	position:absolute;
 	width:400px;
 	height:100px;
 
@@ -682,6 +682,6 @@ ul.puntos {
 
 	width:400px;
 	height:100px;
-	float: top;
+	float:top;
 
 }

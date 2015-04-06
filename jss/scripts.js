@@ -27,24 +27,24 @@ function patrs(){
 
 // Visor de banners.
 
-var posicion = -105;
+var posicion = 0;
 
 function Carousel(){
     posicion += 1;			// Saltos en px de la imagen.
     document.getElementById('cnt-imagenes').style.top = "-" + posicion + "px";
-    if(posicion == 315){	// Han pasado 3 imágenes de 125px, reiniciar...
+    if(posicion == 315){	// Han pasado 3 imágenes de 105px, reiniciar...
         document.getElementById('cnt-imagenes').style.top = "0";
         posicion = 0;
+        setTimeout(Carousel, 2500);		// En este momento se produce el reinicio del script, como
+        return;							// La 1º y la 4º imagen es la misma el cambio no se nota.
+    }
+    
+    if(!(posicion%105)){ 		//pausa de cada imagen (105px).
         setTimeout(Carousel, 3000);
         return;
     }
     
-    if(!(posicion%105)){ 	//pausa de cada imagen (125px).
-        setTimeout(Carousel, 3000);
-        return;
-    }
-    
-    runCarousel = setTimeout(Carousel, 1);	// Tiempo entre saltos de las imágenes.
+    setTimeout(Carousel, 1);	// Tiempo entre px de las imágenes.
 }
 
 Carousel();
