@@ -3,7 +3,7 @@
 function check(){
 	
 	var email = document.getElementById("email_content").value;
-	var valid_text = /\S+@\S+\.\S+/;
+	var valid_text = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	
 	if( valid_text.test(email) ){
 	

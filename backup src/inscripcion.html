@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Alberto y Miguel" />
+	<meta name="keywords" lang="es" content="congreso, granada, sistemas, web, CEIIE" />
+	<meta name="description" lang="es" content="Página del primer congreso de Estudiantes de Ingeniería Informática en España" />
+	<title>1º Congreso de CEIIE</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="../image/fav.png" />
+	<script type="text/javascript" src="../jss/scripts.js"></script>
+</head>
+
+<body onload="scripts:Carousel();">
+  <div class="marco"> <!-- init marco -->
+  	  <div class="startup"> <!-- init startup -->
+        <div class ="header"> <!-- init header -->
+            <div class="logo"> <!-- init logo -->
+        
+              <a href="index.html"><img id="imglogo" src="../image/ISBWlogo.png" title="Ir a la página principal" alt="Foto isbw"/></a>
+    
+            </div> <!-- end logo -->
+            
+            <div class="titulo"> <!-- init titulo -->
+              <h2>PRIMER CONGRESO DE CEIIE</h2>
+            </div>	<!-- end titulo -->
+            
+        </div> <!-- end header -->
+         
+        <div class="menu"> <!-- init menu -->
+            <ul class="nav">
+                <li><a href="../src/index.html">PRESENTACIÓN</a>
+                	<ul>
+                    	<li><a href="../src/programa.html">PROGRAMA</a></li>
+						<li><a href="../src/ponentes.html">PONENTES</a></li>
+                    </ul>
+                 </li>
+                <li><a>ACTIVIDADES</a>
+                	<ul>
+                    	<li><a href="../src/sierra_nevada.html">S.NEVADA</a></li>
+						<li><a href="../src/alhambra.html">ALHAMBRA</a></li>
+                    </ul>
+                </li>
+                <li><a href="../src/granada.html">GRANADA</a>
+                	<ul>
+                    	<li><a href="../src/monumentos.html">MONUMENTOS</a></li>
+						<li><a href="../src/tapas.html">TAPAS</a></li>
+                        <li><a href="../src/barrios.html">BARRIOS</a></li>
+						<li><a href="../src/etsiit.html">ETSIIT</a></li>
+                    </ul>
+                </li>				
+                <li><a>COMO LLEGAR</a>
+                	<ul>
+                    	<li><a href="../src/bus.html">BUS</a></li>
+						<li><a href="../src/tren.html">TREN</a></li>
+                        <li><a href="../src/coche.html">COCHE</a></li>
+                        <li><a href="../src/avion.html">AVION</a></li>
+                    </ul>
+                </li>
+                <li class = "current"><a>+ INFO</a>
+                	<ul>
+                    	<li><a href="../src/contacto.html">CONTACTO</a></li>
+						<li><a href="../src/patrocinio.html">PATROCINIO</a></li>
+                        <li><a href="../src/inscripcion.html">INSCRIPCION</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- end menu -->
+        
+      </div> <!-- end startup -->
+      
+      <div id="margen"></div>
+      
+	<div class="contenido"> <!-- init contenido -->
+		<h1>Inscripción</h1>
+		
+		<table class="tabla2">
+        	<tr>
+        		<th> Tipos de inscripción  </th>
+                <th> Hasta el 31 de Marzo </th>
+                <th> Del 1 de Abril al 1 de Mayo </th>
+                <th> Durante el congreso </th>
+        	</tr>
+            <tr>
+            	<td> Estudiante* </td>
+                <td> 25€ </td>
+                <td> 35€ </td>
+                <td> 45€ </td>
+            </tr>
+            <tr class = "tdalt">
+            	<td> Profesor </td>
+                <td> 40€ </td>
+                <td> 50€ </td>
+                <td> 60€ </td>
+            </tr>
+            <tr>
+            	<td> Invitado </td>
+                <td> 50€ </td>
+                <td> 65€ </td>
+                <td> 80€ </td>
+            </tr>
+        </table>
+        
+        <p id="aviso">* Requisito indispensable adjuntar certificado o carnet de estudiante</p>
+        <p>&nbsp;</p>
+        <p>Para inscribirse complete el siguiente formulario:</p>
+       	
+       	<form id="formulario" action="" method="POST" enctype="multipart/form-data">
+			<fieldset>
+			<legend>Inscripción</legend>
+			Nombre y apellidos:<br>
+			<input name="action" value="enviar" type="hidden">
+			<input name="nombre" size="30" type="text">
+			<br> Correo electrónico:<br>
+			<input name="email" size="30" type="text"><br>
+			<br>Tipo de inscripción<br>
+			<select name="tipo">
+			<option value="estudiante">Estudiante</option>
+			<option value="profesor">Profesor</option>
+			<option value="invitado">Invitado</option>
+			</select>
+			<br><br>Actividades extra:<br>
+			<input name="a_extra" size="30" type="checkbox" value="alhambra"> Visita a la Alhambra (30€)<br>
+			<input name="a_extra" size="30" type="checkbox" value="sierra"> Visita a Sierra Nevada (40€)<br>
+			<br>
+			<input value="Enviar" type="submit">
+			</fieldset>
+		</form>
+		<p>Para completar la inscripción, una vez haya recibido el email indicando el precio total, en
+		el plazo de una semana deberá realizar un ingreso en la cuenta
+		siguiente: <span>ES89 2367 22 0004561234</span>. Recibirá un email confirmando el pago.</p>
+       
+	</div>		<!-- end contenido -->
+    
+</div>	<!-- end marco -->
+
+	<footer>
+	   <div id="visor">
+			<div id="cnt-imagenes">
+				<img id="banner" src="../image/banners/1.png" title="UGR" alt="banner ugr">
+				<img id="banner" src="../image/banners/2.png" title="ETSIIT" alt="banner ETSIIT">
+				<img id="banner" src="../image/banners/3.png" title="Departamento de Informática" alt="banner dep inf">
+				<img id="banner" src="../image/banners/1.png" title="UGR" alt="banner ugr">
+			</div>
+		</div>
+		
+		<p>
+		C/Periodista Daniel Saucedo Aranda, s/n<br>
+		18071 GRANADA
+		</p>
+		
+		<p>
+		congreso_sibw@emaildelaetsiit.es<br>
+		Tlf: 998 345 654
+		</p>
+	</footer>
+
+</body>
+</html>

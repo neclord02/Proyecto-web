@@ -50,6 +50,7 @@
 				$presentacion="class=\"current\"";
 		}
 			
+		include("./send-email.php");
 		include("./src/header.php");
 		include("./src/menubar.php");
 		include("./src/content.php");

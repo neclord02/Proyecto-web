@@ -1,82 +1,9 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="author" content="Alberto y Miguel" />
-	<meta name="keywords" lang="es" content="congreso, granada, sistemas, web, CEIIE" />
-	<meta name="description" lang="es" content="Página del primer congreso de Estudiantes de Ingeniería Informática en España" />
-	<title>1º Congreso de CEIIE</title>
-    <link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" type="image/png" href="../image/fav.png" />
-	<script type="text/javascript" src="../jss/scripts.js"></script>
-</head>
-
-<body onload="scripts:Carousel();">
-  <div class="marco"> <!-- init marco -->
-  	  <div class="startup"> <!-- init startup -->
-        <div class ="header"> <!-- init header -->
-            <div class="logo"> <!-- init logo -->
-        
-              <a href="index.html"><img id="imglogo" src="../image/ISBWlogo.png" title="Ir a la página principal" alt="Foto isbw"/></a>
-    
-            </div> <!-- end logo -->
-            
-            <div class="titulo"> <!-- init titulo -->
-              <h2>PRIMER CONGRESO DE CEIIE</h2>
-            </div>	<!-- end titulo -->
-            
-        </div> <!-- end header -->
-         
-        <div class="menu"> <!-- init menu -->
-            <ul class="nav">
-                <li><a href="../src/index.html">PRESENTACIÓN</a>
-                	<ul>
-                    	<li><a href="../src/programa.html">PROGRAMA</a></li>
-						<li><a href="../src/ponentes.html">PONENTES</a></li>
-                    </ul>
-                 </li>
-                <li><a>ACTIVIDADES</a>
-                	<ul>
-                    	<li><a href="../src/sierra_nevada.html">S.NEVADA</a></li>
-						<li><a href="../src/alhambra.html">ALHAMBRA</a></li>
-                    </ul>
-                </li>
-                <li class = "current"><a href="../src/granada.html">GRANADA</a>
-                	<ul>
-                    	<li><a href="../src/monumentos.html">MONUMENTOS</a></li>
-						<li><a href="../src/tapas.html">TAPAS</a></li>
-                        <li><a href="../src/barrios.html">BARRIOS</a></li>
-						<li><a href="../src/etsiit.html">ETSIIT</a></li>
-                    </ul>
-                </li>				
-                <li><a>COMO LLEGAR</a>
-                	<ul>
-                    	<li><a href="../src/bus.html">BUS</a></li>
-						<li><a href="../src/tren.html">TREN</a></li>
-                        <li><a href="../src/coche.html">COCHE</a></li>
-                        <li><a href="../src/avion.html">AVION</a></li>
-                    </ul>
-                </li>
-                <li><a>+ INFO</a>
-                	<ul>
-                    	<li><a href="../src/contacto.html">CONTACTO</a></li>
-						<li><a href="../src/patrocinio.html">PATROCINIO</a></li>
-                        <li><a href="../src/inscripcion.html">INSCRIPCION</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div> <!-- end menu -->
-        
-      </div> <!-- end startup -->
-      
-      <div id="margen"></div>
-      
 	<div class="contenido"> <!-- init contenido -->
 		
 		<a id="barrios">
 		<h3>Barrios principales</h3>
 		<p>Granada tiene 36 barrios, los más importantes son los siguientes:</p>
-		<img id="sierra" src="../image/barrios/mapa.jpg" title="Mapa de los distibntos barrios" alt="Foto mapa" />
+		<img id="sierra" src="./image/barrios/mapa.jpg" title="Mapa de los distibntos barrios" alt="Foto mapa" />
 		
 		<h5>La Chana</h5> 
 		<p>De los barrios de Granada, es uno de los mejores para ir de tapas, ya que en
@@ -94,7 +21,7 @@
 		celebra al aire libre y marca el final del verano.</p>
 		
         
-        <img id="ciencias" src="../image/ciencias.jpg" title="Parque de las Ciencias" alt="Foto pciencias"/>
+        <img id="ciencias" src="./image/ciencias.jpg" title="Parque de las Ciencias" alt="Foto pciencias"/>
         
         <p>El Parque de las Ciencias de Andalucía-Granada es el primer museo interactivo de ciencia de 
         Andalucía (España). Fue inaugurado en mayo de 1995 ocupando en la actualidad 70 000 m². Está 
@@ -103,7 +30,7 @@
         Nacional de Arquitectura en 2009.</p>
 		<br>
 		<h5>El Centro</h5>
-		<img id="centro" src="../image/barrios/alcaiceria.jpg" title="Alcaicería" alt="Foto alcaiceria"/>
+		<img id="centro" src="./image/barrios/alcaiceria.jpg" title="Alcaicería" alt="Foto alcaiceria"/>
 		<p>En este barrio de Granada se encuentran algunos de los lugares más característicos
 		de la ciudad como la Alhambra de Granada, la Capilla Real (donde descansan los Reyes Católicos
 		Juana y Felipe), la Catedral, el Ayuntamiento, la Plaza de las Pasiegas, la Plaza Bib Rambla,
@@ -113,7 +40,7 @@
 		Reyes Católicos.</p>
 		
 		<h5>Albaicín</h5>
-		<img id="albaicin" src="../image/barrios/albaicin.jpg" title="El Albaicin" alt="Foto albaicin"/>
+		<img id="albaicin" src="./image/barrios/albaicin.jpg" title="El Albaicin" alt="Foto albaicin"/>
 		<p>Este barrio de Granada fue construido por los árabes antes de su expulsión, y en
 		él persisten numerosos monumentos renacentistas y Nazaristas como la Muralla Ziri,
 		el Arco de las Pesas, las Torres de la Alhacaba, la Iglesia de El Salvador 
@@ -134,27 +61,3 @@
 	</div>		<!-- end contenido -->
     
 </div>	<!-- end marco -->
-
-	<footer>
-	   <div id="visor">
-			<div id="cnt-imagenes">
-				<img id="banner" src="../image/banners/1.png" title="UGR" alt="banner ugr">
-				<img id="banner" src="../image/banners/2.png" title="ETSIIT" alt="banner ETSIIT">
-				<img id="banner" src="../image/banners/3.png" title="Departamento de Informática" alt="banner dep inf">
-				<img id="banner" src="../image/banners/1.png" title="UGR" alt="banner ugr">
-			</div>
-		</div>
-		
-		<p>
-		C/Periodista Daniel Saucedo Aranda, s/n<br>
-		18071 GRANADA
-		</p>
-		
-		<p>
-		congreso_sibw@emaildelaetsiit.es<br>
-		Tlf: 998 345 654
-		</p>
-	</footer>
-
-</body>
-</html>
