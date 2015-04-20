@@ -285,12 +285,40 @@ p span{
 }
 
 .tabla{
-	
+
+	text-align:center;
 	padding: 10px;
 	border: 2px black;
     border-collapse: collapse;
 	width: 780px;
 	
+}
+
+table #tipo{
+
+	padding: 0px 0px 0px 0px;
+	font-size:12px;
+	
+}
+
+p#tipo{
+	
+	
+	padding: 0px 0px 0px 0px;
+	margin: 5px 0px 5px 0px;
+	font-size:13px;
+	
+}
+
+p#jus{
+	
+	
+	padding: 0px 0px 0px -30px;
+	margin: 20px 0px 20px 0px;
+/*
+	font-size:13px;
+*/
+	text-align:justify;
 }
 
 .tabla2{

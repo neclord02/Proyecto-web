@@ -11,14 +11,15 @@
 		<script type="text/javascript" src="./jss/scripts.js"></script>
 	</head>
 
-	<body onload="scripts:Carousel();">
+	<body>
+	<body onload="scripts:Carousel();"> 
 	<?php
 		
 		$presentacion="";		// Varables que se usarán como rutas, por defecto en blanco
 		$actividades="";		// para no asignar la clase "current" a ningún botón en particular.
 		$granada="";
 		$comollegar="";
-		$info="";
+		$info="";	
 							
 		if(isset($_GET["contenido"]))		// Si se establecido la variable "contenido" por $_GET. 
 			$contenido=$_GET["contenido"];	
@@ -50,7 +51,7 @@
 				$presentacion="class=\"current\"";
 		}
 			
-		include("./send-email.php");
+//		include("./send-email.php");
 		include("./src/header.php");
 		include("./src/menubar.php");
 		include("./src/content.php");
