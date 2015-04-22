@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="author" content="Alberto y Miguel" />
 		<meta name="keywords" lang="es" content="congreso, granada, sistemas, web, CEIIE" />
 		<meta name="description" lang="es" content="Página del primer congreso de Estudiantes de Ingeniería Informática en España" />
