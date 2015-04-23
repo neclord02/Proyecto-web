@@ -9,6 +9,10 @@
 		$texto=$_GET["texto"];
 		$cat=$_GET["cat"];
 		include("./src/contexmenu.php");
+	}else if( $contenido == "alhambra" or $contenido == "sierra_nevada" ){
+		
+		include("./src/actividades.php");
+		
 	}else
 	
 		include("src/".$contenido.".html");	// En $contenido está el nombre del archivo html a incluir,

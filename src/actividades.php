@@ -1,9 +1,13 @@
     
     <?php 
 		// ¡¡¡¡ EL ARCHIVO DEBE ESTAR CODIFICADO EN UTF-8 !!!!!!!!!!!!!!!!!    	
-        // Abro el archivo del usuario para la actividad de la alhambra
-    	$archivo = fopen( "./config_usuario/actividad_alhambra.txt", "r" ) or die("El archivo no existe");
-    
+        // Abro el archivo del usuario para la actividad
+		if( $contenido == "sierra_nevada" ) 
+			$archivo = fopen( "./config_usuario/actividad_sierra_nevada.txt", "r" ) or die("El archivo no existe");
+		else if( $contenido == "alhambra" )
+    		$archivo = fopen( "./config_usuario/actividad_alhambra.txt", "r" ) or die("El archivo no existe");
+    	else
+			die( "ERROR.... ACTIVIDAD INEXISTENTE O ALGO RARO HA PASADO" );
     
     	// LECTURA DE DATOS:
     

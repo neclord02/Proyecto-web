@@ -1,8 +1,32 @@
-Sierra Nevada, la estaci�n de esqu� m�s alta de Espa�a
-		
-Se halla enclavada en el Sistema Penib�tico, al sur de Espa�a, concretamente en el municipio de Monachil, a 32 kil�metros de Granada. Sierra Nevada ofrece unas excelentes condiciones para la
-pr�ctica del deporte blanco.
-La estaci�n de esqu� se encuentra en el coraz�n del Parque Nacional de Sierra Nevada, que es a su vez Parque Natural y Reserva de la Biosfera. Entre sus monta�as est�n las cumbres m�s altas de la pen�nsula, siendo el Mulhac�n con sus 3.478m el pico m�s alto. Adem�s, Sierra Nevada est� considerada como la estaci�n de esqu� con m�s ambiente nocturno de Europa. El deporte en Sierra Nevada se combina con la 	diversi�n.
-Tambi�n en verano el macizo monta�oso granadino supone un gran aliciente para el visitante. 
-Adem�s de su exclusiva flora y fauna, sus maravillosas vistas y sus impresionantes neveros, 
-Sierra Nevada ofrece multitud de actividades y rutas de alta y baja monta�a.
+﻿		TITULO:
+Sierra Nevada, la estación de esquí más alta de España
+		RUTA DE LA IMAGEN DE LA ACTIVIDAD:
+./image/actividades/sierra.jpg
+		INFORMACION GENERAL:
+Se halla enclavada en el Sistema Penibético, al sur de España, concretamente en el municipio de Monachil, a 32 kilómetros de Granada. Sierra Nevada ofrece unas excelentes condiciones para lapráctica del deporte blanco.
+La estación de esquí se encuentra en el corazón del Parque Nacional de Sierra Nevada, que es a su vez Parque Natural y Reserva de la Biosfera. Entre sus montañas están las cumbres más altas de la península,siendo el Mulhacén con sus 3.478m el pico más alto. Además, Sierra Nevada está considerada como la estación de esquí con más ambiente nocturno de Europa. El deporte en Sierra Nevada se combina con la diversión.
+También en verano el macizo montañoso granadino supone un gran aliciente para el visitante. Además de su exclusiva flora y fauna, sus maravillosas vistas y sus impresionantes neveros, Sierra Nevada ofrece multitud de actividades y rutas de alta y baja montaña.
+
+APARTADO:
+	TITULO:
+Excursión en Máquinas Pisa-Pistas
+	INFORMACION:
+En este caso queremos ofrecerles una experiencia única: una excursión nocturna en Sierra Nevada en Máquinas Pisa Pistas.  Durante esta excursión nocturna subirás al Veleta desde Pradollano en unamáquina pisa pistas y a 3.398 metros de altitud podrás disfrutar de las impresionantes vistas deGranada y la Costa Tropical. Bajo un cielo lleno de estrellas el grupo toma un aperitivo e iniciael descenso. La experiencia dura aproximadamente 2 horas.
+
+APARTADO:
+	TITULO:
+Taller de Observación del cielo
+	INFORMACION:
+Paralelamente podrás asistir al Taller de Observación del Cielo, combinando amenas explicaciones con el uso de equipo astronómico. Diseñado para esquiadores y visitantes, podrás acceder hasta Borreguiles en Telecabina y disfrutar de la nieve bajo las estrellas, sin necesidad de calzarte losesquís.
+
+APARTADO:
+	TITULO:
+Sierra Nevada para discapacitados
+	INFORMACION:
+Sierra Nevada está comprometida con la integración de las personas con algún tipo de discapacidad física o mental para que puedan practicar el esquí alpino. En la estación se han hecho esfuerzos para reducir las barreras arquitectónicas y hacer la estación más accesible para las personas con problemas de movilidad o alguna discapacidad.
+
+APARTADO:
+	TITULO:
+Cena Cabaré en el Restaurante Alcazaba
+	INFORMACION:
+Y como colofón final a los ajetreados días de Congreso, queremos ofrecerle una Cena cabaré de despedida en el Comedor Sulayr frente Restaurante Alcazaba (Borreguiles, 2700 m.), el de mayor altitud de la península. Cena a la luz de la luna, en un espacio acogedor decorado con esmero, con live show incluido. Un espectáculo a cargo de cuatro cantantes (dos chicos y dos chicas) guiados por un maestro de ceremonias que une los diversos números mediante pequeños monólogos o números introductorios.

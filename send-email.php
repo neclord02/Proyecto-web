@@ -8,8 +8,8 @@
     $mail->Port = 465;
     $mail->SMTPSecure = 'ssl';
     // or try these settings (worked on XAMPP and WAMP):
-    // $mail->Port = 587;
-    // $mail->SMTPSecure = 'tls';
+     //$mail->Port = 587;
+    //$mail->SMTPSecure = 'tls';
      
      
     $mail->Username = "";
