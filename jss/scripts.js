@@ -1,9 +1,7 @@
 // Validador de email.
 
 function check(){
-	<?php
-			echo include("./send-email.php");
-		?>
+
 	var email = document.getElementById("email_content").value;
 	var valid_text = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	

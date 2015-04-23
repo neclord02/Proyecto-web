@@ -50,13 +50,23 @@
 				$contenido="index";
 				$presentacion="class=\"current\"";
 		}
-			
-//		include("./send-email.php");
-		include("./src/header.php");
-		include("./src/menubar.php");
-		include("./src/content.php");
-		include("./src/footer.php");
-
+	?>
+	<div class="marco"> <!-- init marco -->
+		<div class="startup"> <!-- init startup -->
+		<?php
+			//	include("./send-email.php");
+				include("./src/header.php");
+				include("./src/menubar.php");
+		?>		
+		</div> <!-- end startup -->
+	
+		<div id="margen"></div>
+		<?php
+				include("./src/content.php");
+		?>
+	</div>	<!-- end marco -->
+	<?php
+				include("./src/footer.php");
 	?>
 	</body>
 </html>

@@ -39,8 +39,4 @@
 				</li>
 					</ul>
 		</div> <!-- end menu -->
-        
-	</div> <!-- end startup -->
-	
-<div id="margen"></div>
     
