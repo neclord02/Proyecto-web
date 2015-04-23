@@ -23,7 +23,7 @@
         fgets( $archivo ); // Descarto la siguiente linea (INFORMACION GENERAL:)
         $info = "";
         
-        while( ($aux = fgets( $archivo ) ) != "\n"  ){
+        while( ($aux = fgets( $archivo ) ) != "\r\n" && $aux != "\n" ){
         	$info .= "<p>";
         	$info .= $aux;
         	$info .= "</p>";
