@@ -15,19 +15,16 @@
     $mail->Username = "";
     $mail->Password = "";
      
-    $mail->IsHTML(true); // if you are going to send HTML formatted emails
+    $mail->IsHTML(false); // if you are going to send HTML formatted emails
     $mail->SingleTo = true; // if you want to send a same email to multiple users. multiple emails will be sent one-by-one.
      
-    $mail->From = "";
-    $mail->FromName = "";
+    $mail->From = $email;
+    $mail->FromName = $nombre;
      
     $mail->addAddress("");
      
-    $mail->Subject = "Testing PHPMailer with localhost";
-    $mail->Body = "Hi, This system is working perfectly.";
+    $mail->Subject = "[Mensaje de Web] ".$asunto;
+    $mail->Body = $mensaje;
      
-    if(!$mail->Send())
-        echo "Message was not sent <br />PHPMailer Error: " . $mail->ErrorInfo;
-    else
-        echo "Message has been sent";
+	$mail->Send();
 ?>

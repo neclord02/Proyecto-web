@@ -1,3 +1,17 @@
+<?php
+	// Envío de email.				
+	if(isset($_POST["nombre"])){		// Si se establecido la variable "nombre" por $_POST
+										// es porque la validación del email se ha hecho correctamente.
+		$nombre=$_POST["nombre"];
+		$email=$_POST["email"];
+		$asunto=$_POST["asunto"];
+		$mensaje=$_POST["mensaje"];
+		
+		include("./mail/send-email.php");	// Una vez obtenidos los datos del formulario, insertamos el
+										// código que manda el email con los mismos.
+		}
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -53,8 +67,7 @@
 	?>
 	<div class="marco"> <!-- init marco -->
 		<div class="startup"> <!-- init startup -->
-		<?php
-			//	include("./send-email.php");
+		<?php	
 				include("./src/header.php");
 				include("./src/menubar.php");
 		?>		
