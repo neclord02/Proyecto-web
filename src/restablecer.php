@@ -8,7 +8,7 @@
 
 	$conexion=mysql_connect($servidor,$usuario, $passdb) or die("<p id=error>Error en la conexión</p>");
 
-	mysql_query("use $base_datos"))
+	mysql_query("use $base_datos");
 
 	mysql_select_db($base_datos,$conexion) or die("<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>");
 	
