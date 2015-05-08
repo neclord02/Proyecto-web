@@ -1,6 +1,15 @@
 <?php
+	// Inicio de sesión
+	session_start();
+	
+	// Cuando se pulsa el botón salir la sesión se destruye y se va al index.
+	if(isset($_GET['salir'])){
+		session_destroy();
+		header("location:index.php");
+	}
+
 	// Envío de email.				
-	if(isset($_POST["nombre"])){		// Si se establecido la variable "nombre" por $_POST
+	if( isset($_POST["nombre"]) || isset($_POST["nombre"]) ){		// Si se establecido la variable "nombre" o "email" por $_POST
 										// es porque la validación del email se ha hecho correctamente.
 		$nombre=$_POST["nombre"];
 		$email=$_POST["email"];
@@ -59,7 +68,10 @@
 			case "contacto":
 			case "patrocinio":
 			case "inscripcion": $info="class=\"current\"";  break;
-				
+			case "login": ;  break;
+			case "registro": ;  break;
+			case "restablecer": ;  break;
+			
 			default:
 				$contenido="index";
 				$presentacion="class=\"current\"";
