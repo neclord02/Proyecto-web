@@ -1,4 +1,8 @@
 <?php
+	// Creación de la BD
+	include("./src/php/bd.php");	// Comentar una vez creada
+
+
 	// Inicio de sesión
 	session_start();
 	
@@ -7,18 +11,6 @@
 		session_destroy();
 		header("location:index.php");
 	}
-
-	// Envío de email.				
-	if( isset($_POST["nombre"]) || isset($_POST["nombre"]) ){		// Si se establecido la variable "nombre" o "email" por $_POST
-										// es porque la validación del email se ha hecho correctamente.
-		$nombre=$_POST["nombre"];
-		$email=$_POST["email"];
-		$asunto=$_POST["asunto"];
-		$mensaje=$_POST["mensaje"];
-		
-		include("./mail/send-email.php");	// Una vez obtenidos los datos del formulario, insertamos el
-										// código que manda el email con los mismos.
-		}
 ?>
 
 <!doctype html>
@@ -80,18 +72,18 @@
 	<div class="marco"> <!-- init marco -->
 		<div class="startup"> <!-- init startup -->
 		<?php	
-				include("./src/header.php");
-				include("./src/menubar.php");
+				include("./src/php/header.php");
+				include("./src/php/menubar.php");
 		?>		
 		</div> <!-- end startup -->
 	
 		<div id="margen"></div>
 		<?php
-				include("./src/content.php");
+				include("./src/php/content.php");
 		?>
 	</div>	<!-- end marco -->
 	<?php
-				include("./src/footer.php");
+				include("./src/php/footer.php");
 	?>
 	</body>
 </html>
