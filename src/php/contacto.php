@@ -1,5 +1,5 @@
 <?php
-	
+
 	// Envío de email.				
 	if( isset($_POST["email"]) ){	// Si se establecido la variable "email" por $_POST
 									// es porque la validación del email se ha hecho correctamente.
@@ -8,9 +8,10 @@
 		$asunto="[Mensaje de Web] ".$_POST["asunto"];
 		$mensaje=$_POST["mensaje"];
 		
-		include("./mail/send-email.php");	// Una vez obtenidos los datos del formulario, insertamos el									// código que manda el email con los mismos.
-											// script que envia el email.
+		include("./mail/send-email.php");	// Una vez obtenidos los datos del formulario, insertamos el
+											// script que manda el email con los mismos.
 	}
+	
 ?>
 
 	<div class="contenido"> <!-- init contenido -->

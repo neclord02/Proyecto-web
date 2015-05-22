@@ -22,8 +22,8 @@
     $mail->From = $email;
     $mail->FromName = $nombre;
      
-    $mail->addAddress("s@localhost.dev");		// Direccion del admin
-    $mail->addAddress($email);					// Copia para el remitente
+    $mail->addAddress( "s@localhost.dev" );		// Direccion del admin
+    $mail->addAddress( $email );				// Copia para el remitente
      
     $mail->Subject = $asunto;
     $mail->Body = $mensaje;

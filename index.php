@@ -23,7 +23,7 @@
 		<title>1º Congreso de CEIIE</title>
 		<link href="./css/style.css" rel="stylesheet" type="text/css" />
 		<link rel="icon" type="image/png" href="./image/fav.png" />
-		<script type="text/javascript" src="./jss/scripts.js"></script>
+		<script type="text/javascript" src="./jss/scripts.js"></script>	
 	</head>
 
 	<body>
@@ -63,6 +63,8 @@
 			case "login": ;  break;
 			case "registro": ;  break;
 			case "restablecer": ;  break;
+			case "pass": ;  break;
+			case "admin": ;  break;
 			
 			default:
 				$contenido="index";
@@ -76,8 +78,7 @@
 				include("./src/php/menubar.php");
 		?>		
 		</div> <!-- end startup -->
-	
-		<div id="margen"></div>
+
 		<?php
 				include("./src/php/content.php");
 		?>

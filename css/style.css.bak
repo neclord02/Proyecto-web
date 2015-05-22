@@ -26,7 +26,6 @@ body{
 	background: url(../image/logo3.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
-	
 }
 
 .boton{
@@ -82,18 +81,21 @@ body{
 	
 	text-align:justify;
 	float: left;
+	margin-top: 30px;
 	margin-left:2px;
 	margin-right: 2px;
 	margin-bottom: 10px;
 	padding: 0px 10px; 
 	width: 796px;
-	
 }
 
 .contenido p{
 
 	padding: 0 50px 0 40px; /* Funciona en sentido horario: arriba, derecha, abajo, izquierda */ 
-
+/*
+	margin: 50px 0px;
+*/
+	
 }
 
 .contenido h4{
@@ -101,7 +103,6 @@ body{
 	padding: 40px 40px 0px 40px; 
 	color: #FF6600;
 	font-family: masque;
-	
 }
 
 .contenido h5{
@@ -137,6 +138,14 @@ body{
 	
 }
 
+/*
+.como_llegar{
+	
+	
+	
+}
+*/
+
 .current{
 	
 	background-color: #FF6600;
@@ -164,11 +173,12 @@ footer{
 	background-color: #000000;
 	color: white;
 	padding: 5px 20px;
-	
 }
 
 #formulario{
-
+/*
+	float:left;
+*/
 	position:relative;
 	margin: 0px auto;
 	padding:0 100px;
@@ -176,14 +186,12 @@ footer{
 }
 
 .foto_desc_derecha{
-
 	float: right;
 	width: 600px;
 	height: 170px;
 }
 
 .foto_desc_izquierda{
-
 	float: left;
 	width: 550px;
 	height: 170px;
@@ -200,6 +208,15 @@ h1{
 	background-position: center;
 	
 }
+
+/*h4{
+	
+	font-family: masque;
+	font-size: 13px;
+	color: #000000;
+	display: inline;
+	padding-right: 14px;
+}*/
 
 .header{
 	
@@ -218,7 +235,7 @@ h1{
 	
 }
 
-.login a#boton{
+.login a{
 	
 	background-color:#000;
 	color:#fff;
@@ -229,51 +246,9 @@ h1{
 
 }
 
-.login a:hover#boton{
-
-	background-color:#FF6600;
-		
-}
-
-.login a{
-	
-/*
-	background-color:#000;
-*/
-	color:grey;
-	text-decoration:none;
-	padding:2px 10px 2px 10px;
-	border-radius: 4px 4px 4px 4px;
-/*
-	margin:0px 10px;
-*/
-
-}
-
 .login a:hover{
 
 	background-color:#FF6600;
-		
-}
-
-.login a#admin{
-	
-/*
-	background-color:#000;
-*/
-	color:red;
-	text-decoration:none;
-	padding:2px 10px 2px 10px;
-	border-radius: 4px 4px 4px 4px;
-/*
-	margin:0px 10px;
-*/
-
-}
-
-.login a:hover#admin{
-
-	background-color:black;
 		
 }
 
@@ -300,7 +275,6 @@ h1{
 	float: left;
 	width: 650px;
 	margin-left: 4px;
-	
 }
 
 .logo_etsiit_contacto{
@@ -308,24 +282,19 @@ h1{
 	float: left;
 	width: 650px;
 	margin-left: 4px;
-	
 }
 
 .logo_etsiit_contacto #logo_etsiit{
-
 	float:left;
 	width:300px;
 	height:100px;
-	
 }
 
 .logo_etsiit_contacto #lsi_logo{
-
 	float:right;
 	width:300px;
 	height:100px;
 	left:200px;
-	
 }
 
 .marco{
@@ -335,7 +304,6 @@ h1{
 	overflow: hidden;
 	border: 1px solid black;
 	background-color: white;
-	
 }
 
 .menu{
@@ -353,9 +321,9 @@ p span{
 
 .startup{
 
+	position:absolute;
 	background-color: white;
 	border-bottom: 1px solid #000000;
-	
 }
 
 .tabla{
@@ -377,6 +345,7 @@ table #tipo{
 
 p#tipo{
 	
+	
 	padding: 0px 0px 0px 0px;
 	margin: 5px 0px 5px 0px;
 	font-size:13px;
@@ -385,10 +354,13 @@ p#tipo{
 
 p#jus{
 	
+	
 	padding: 0px 0px 0px -30px;
 	margin: 20px 0px 20px 0px;
+/*
+	font-size:13px;
+*/
 	text-align:justify;
-
 }
 
 .tabla2{
@@ -398,17 +370,6 @@ p#jus{
 	border: 2px black;
     border-collapse: collapse;
 	width: 700px;
-	
-}
-
-.tabla3{
-
-	float:left;
-	text-align:center;
-	margin: 10px 40px 10px 40px;
-	border: 2px black;
-    border-collapse: collapse;
-	width: 300px;
 	
 }
 
@@ -437,7 +398,7 @@ th{
 
 	position:absolute;
 	padding: 0px 0px 0px 100px;
-	height:0px;
+	height:0px;	/* 100px */
 	width: 685px;
 	float: right;
 	font-size: 25px;
@@ -447,16 +408,41 @@ th{
 	
 }
 
+/*ul#menu {
+
+    padding: 20px;
+    
+}
+
+ul#menu li {
+
+    display: inline;
+    
+}
+
+ul#menu li a {
+
+    background-color: black;
+    color: white;
+    padding: 22px 30px;
+	font-family: masque;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+    
+}
+
+ul#menu li a:hover {
+
+    background-color: #FF6600;
+    
+}*/
+
 ul, ol {
-
 	list-style:none;
-
 }
 
 ul.puntos {
-
 	list-style:disc;
-
 }
 
 .nav{
@@ -469,55 +455,41 @@ ul.puntos {
 }
 
 .nav > li {
-
 	float:left;
 	padding: 3px 3px;
-	
 }
 
 .nav li a {
-
 	background-color:#000;
 	color:#fff;
 	text-decoration:none;
 	padding:10px 20px 10px 20px;
 	display:block;
 	border-radius: 4px 4px 4px 4px;
-	
 }
 
 .nav li a:hover {
-
 	background-color:#FF6600;
-
 }
 
 .nav li ul {
-
 	display:none;
 	position:absolute;
 	min-width:140px;
-
 }
 
 .nav li:hover > ul {
-
 	display:block;
-
 }
 
 .nav li ul li {
-
 	position:relative;	/* yhgygyygugygyggygy*/
 	right:40px;
-
 }
 
 .nav li ul li ul {
-
 	right:-140px;
 	top:0px;
-
 }
 
 #imglogo{
@@ -738,10 +710,22 @@ ul.puntos {
 	
 }
 
+#margen{
+	
+	margin-top:120px;
+	
+}
+
 #mensaje{
 	
 	max-height: 105px;
 	max-width: 542px;
+	
+}
+
+#error{
+
+	color:red;
 	
 }
 

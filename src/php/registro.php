@@ -2,15 +2,21 @@
 	
 	// Acceso a la BD	
 	$servidor = "localhost";
-	$usuario = "root";
-	$passdb = "";
+	$usuario = "admin_congreso";
+	$passdb = "ytT7Vqtz5pDRabjX";
 	$base_datos = "congreso";
 
-	$conexion=mysql_connect($servidor,$usuario, $passdb) or die("<p id=error>Error en la conexión</p>");
-
-	mysql_query("use $base_datos");
-
-	mysql_select_db($base_datos,$conexion) or die("<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>");
+	// Conexión con el servidor.
+	$mysqli = new mysqli( $servidor, $usuario, $passdb );
+	if ( $mysqli->connect_errno ) {
+		echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
+	}
+	
+	// Selección de la BD
+	//~ $mysqli->select_db( "$base_datos" );
+	if ( !$mysqli->select_db( "$base_datos" ) ) {
+		echo "<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>";
+	}
 	
 	
 	$user_exist=""; 	// Mensaje en caso de existir el usuario.
@@ -25,37 +31,39 @@
 		$email=$_POST['email'];
 		
 		// Comprobamos que el usuario y el email no estén ya en la BD.
-		$consulta_user=mysql_query("select user from usuarios where
-									user='$user' ");
+		$consulta_user=$mysqli->query("SELECT user FROM usuarios WHERE
+										user='$user' ");
 									
-		$consulta_email=mysql_query("select email from usuarios where
-									email='$email' ");
+		$consulta_email=$mysqli->query("SELECT email FROM usuarios WHERE
+										email='$email' ");
 		
 		
-		// Si la consulta devuelve un número de filas distinto de 0, el usuario existe en la BD.
-		if(mysql_num_rows($consulta_user) != 0 )
+		// Si la consulta devuelve un número de filas distinto de 0 ( true ), el usuario existe en la BD.
+		if( $consulta_user->num_rows )
 			
 			$user_exist="<p id=error><span>El nombre de usuario introducido ya se encuentra en nuestra base de datos.</span></p>";
 		
-		if(mysql_num_rows($consulta_email) != 0)
+		if( $consulta_email->num_rows )
 		
 			$email_exist="<p id=error><span>El email introducido ya se encuentra en nuestra base de datos.</span></p>";
 		
-		if(mysql_num_rows($consulta_user) == 0 && mysql_num_rows($consulta_email) == 0){
+		if( !$consulta_user->num_rows && !$consulta_email->num_rows ){
 			
 			// Insertamos los datos.
-			mysql_query("INSERT INTO congreso.usuarios (email, user, pass) 
+			$mysqli->query("INSERT INTO congreso.usuarios (email, user, pass) 
 							VALUES ('$email', '$user', '$pass'); ");
 			
 			// Comprobamos que el "insert" se ha realizado correctamente
-			$consulta=mysql_query("select user,email from usuarios where
-									user='$user' and email='$email' ");
-			// Datos de acceso en un array.
-			$datos_acceso=mysql_fetch_array($consulta);
+			$consulta=$mysqli->query("SELECT user,pass FROM usuarios WHERE
+									user='$user' AND email='$email' ");
 			
-			if(mysql_num_rows($consulta) != 0 )
+			
+			if( $consulta->num_rows )
 			{			
-			
+				
+				// Datos de acceso en un array.
+				$datos_acceso=$consulta->fetch_row();
+				
 				$ok="<p><span>El registro se ha realizado correctamente.</span></p>";
 				// Envío de email.				
 				$nombre="WEB del congreso de CEIIE";
@@ -63,7 +71,7 @@
 				$mensaje="<h2>Gracias por registrarse</h2>
 						  <p>Su usuario es: <b>$datos_acceso[0]</b> y su contrase&ntilde;a: <b>$datos_acceso[1]</b>
 						  <p>Saludos cordiales.</p>";
-				include("./mail/send-email.php");	// Una vez añadido el nuevo usuario en la BD, insertamos el									// código que manda el email con los mismos.
+				include("./mail/send-email.php");	// Una vez añadido el nuevo usuario en la BD, insertamos el
 													// script que envia el email.
 			}
 			else
@@ -105,6 +113,6 @@
 <?php
 
 	// Cierre de conexión.
-	mysql_close($conexion);
+	$mysqli->close();
 	
 ?>

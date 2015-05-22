@@ -11,12 +11,15 @@
 		<div class="login">
 			<?php
 				// Botones de login			
-				if(isset($_SESSION['user']) )
+				if( isset( $_SESSION['user'] ) )
 				{
-					echo "<p>".$_SESSION['user']."<a href=index.php?salir>Salir</a></p>";
+					if( $_SESSION['admin'] )
+						echo "<p><a id=admin href=index.php?contenido=admin>".$_SESSION['user']."</a><a id=boton href=index.php?salir>Salir</a></p>";
+					else
+						echo "<p><a href=index.php?contenido=pass>".$_SESSION['user']."</a><a id=boton href=index.php?salir>Salir</a></p>";
 				}
 				else
-					echo "<a href=index.php?contenido=login>login</a>";
+					echo "<a id=boton href=index.php?contenido=login>login</a>";
 				
 			?>
 			

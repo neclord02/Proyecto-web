@@ -2,15 +2,20 @@
 	
 	// Acceso a la BD	
 	$servidor = "localhost";
-	$usuario = "root";
-	$passdb = "";
+	$usuario = "admin_congreso";
+	$passdb = "ytT7Vqtz5pDRabjX";
 	$base_datos = "congreso";
 
-	$conexion=mysql_connect($servidor,$usuario, $passdb) or die("<p id=error>Error en la conexión</p>");
-
-	mysql_query("use $base_datos");
-
-	mysql_select_db($base_datos,$conexion) or die("<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>");
+	// Conexión con el servidor.
+	$mysqli = new mysqli( $servidor, $usuario, $passdb );
+	if ( $mysqli->connect_errno ) {
+		echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
+	}
+	
+	// Selección de la BD
+	if ( !$mysqli->select_db( "$base_datos" ) ) {
+		echo "<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>";
+	}
 	
 	
 	$no_usuario=""; // Mensaje en caso de no existir el email.
@@ -22,14 +27,15 @@
 	 
 
 		// Obtenemos en usuario y la contraseña del email introducido.
-		$consulta=mysql_query("select user,pass from usuarios where
-								email='$email' ");
-			
+		$consulta=$mysqli->query("SELECT user,pass FROM usuarios WHERE
+									email='$email' ");
+	
+
 		// Datos de acceso en un array.
-		$datos_acceso=mysql_fetch_array($consulta);
+		$datos_acceso=$consulta->fetch_row();
 			
 		// Si la consulta devuelve un número de filas distinto de 0, el usuario existe en la BD.
-		if(mysql_num_rows($consulta) != 0 )
+		if( $consulta->num_rows )
 		{
 
 			$ok="<p><span>Se ha enviado un email con sus datos de acceso.</span></p>";
@@ -72,6 +78,6 @@
 <?php
 
 	// Cierre de conexión.
-	mysql_close($conexion);
+	$mysqli->close();
 	
 ?>

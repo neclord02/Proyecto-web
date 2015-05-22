@@ -18,6 +18,9 @@
 				case "contacto":
 				case "login":
 				case "registro":
+				case "inscripcion":
+				case "pass":
+				case "admin";
 				case "restablecer": include("./src/php/".$contenido.".php");  break;
 		
 				default:
