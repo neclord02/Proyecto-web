@@ -20,7 +20,7 @@
 				case "registro":
 				case "inscripcion":
 				case "pass":
-				case "admin";
+				case "admin":
 				case "restablecer": include("./src/php/".$contenido.".php");  break;
 		
 				default:

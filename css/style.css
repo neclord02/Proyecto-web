@@ -771,3 +771,29 @@ ul.puntos {
 	float:top;
 
 }
+
+#boton_editar{
+	
+	margin: 0 auto;
+	width: 100px;
+	text-align: center;
+	font-family: masque;
+	color: white;
+	background-color: black;
+	border-radius: 4px;
+	padding: 4px;
+	cursor: pointer;
+	
+}
+
+a{
+	
+	text-decoration: none;
+	
+}
+
+#boton_editar:hover{
+	
+	background-color: #FF6600;
+	
+}

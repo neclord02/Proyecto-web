@@ -52,6 +52,16 @@
  
     <div class="contenido"> <!-- init contenido -->
 		
+        <?php
+		
+			if( $_SESSION['admin'] ){
+			
+				echo '<a href="#"><div id="boton_editar"> EDITAR </div></a>';	
+				
+			}
+		
+		?>
+        
         <h3> <?php echo $titulo ?> </h3>
 
         <img id="sierra" src = <?php echo $imagen ?> />
