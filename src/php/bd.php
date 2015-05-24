@@ -143,10 +143,8 @@
 	// Si la consulta devuelve 0 filas es que la actividad no existe, se crea.
 	if( !$filas )
 	{
-		$desc_alhambra="Visita al monumento más importante de la ciudad, patrimonio de la humanidad, incluida 
-						visita al palacio de Carlos V y a los jardines del Generalife";
-		$desc_sierra="Excursión a la estación de esquí de Sierra Nevada, con varias actividades incluidas,
-						como recorrido en máquinas pisa-pistas y taller de observación del cielo.";
+		$desc_alhambra="Visita al monumento más importante de la ciudad, patrimonio de la humanidad, incluida visita al palacio de Carlos V y a los jardines del Generalife";
+		$desc_sierra="Excursión a la estación de esquí de Sierra Nevada, con varias actividades incluidas, como recorrido en máquinas pisa-pistas y taller de observación del cielo.";
 		$foto_alhambra="./image/alhambra2.jpg";
 		$foto_sierra="./image/actividades/sierra.jpg";
 		
@@ -210,10 +208,13 @@
 					c_trabajo VARCHAR ( 50 ) NOT NULL,
 					tlf INT ( 10 ) NOT NULL,
 					email VARCHAR ( 50 ) NOT NULL,
-					pass VARCHAR ( 15 ) NOT NULL,
-					cuota VARCHAR ( 50 ) NOT NULL,
-					actividades VARCHAR ( 50 ) NOT NULL,
-					hotel VARCHAR ( 50 ) NOT NULL
+					id_cuota INT ( 2 ) NOT NULL,
+					alhambra BOOLEAN DEFAULT false,
+					sierra BOOLEAN DEFAULT false,
+					hotel VARCHAR ( 50 ),
+					f_entrada DATE,
+					f_salida DATE,
+					tipo_hab BOOLEAN DEFAULT false
 					)
 					" );
 	}
@@ -226,12 +227,12 @@
 	if( !$filas )
 	{
 	
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre, pass ) 
-							VALUES ( 's@localhost.dev', 'pepe', '1234' )" );
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre, pass ) 
-							VALUES ( 'juan@hotmail.com', 'juan', '1234' )" );
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre, pass ) 
-							VALUES ( 'laura@yahoo.es', 'laura', '1234' )" );
+		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
+							VALUES ( 's@localhost.dev', 'pepe' )" );
+		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
+							VALUES ( 'juan@hotmail.com', 'juan' )" );
+		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
+							VALUES ( 'laura@yahoo.es', 'laura' )" );
 	}
 	
 	

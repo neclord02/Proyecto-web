@@ -18,6 +18,18 @@
 	}
 	
 	
+	
+	// Generar contraseña aleatoria.
+	function pass( $longitud = 8, $cars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' ) {
+		return substr( str_shuffle( $cars ), 0, $longitud );
+	}
+	
+	if( isset( $_POST['generar'] ) )
+		$pass_rnd=pass();
+	else
+		$pass_rnd="";
+	
+
 	$pass_inc=""; 	// Mensaje en caso de introducir incorrectamente la contraseña actual.
 	$pass_dif=""; 	// Mensaje en caso de no ser iguales las nuevas contraseñas.
 	$ok="";			// Mensaje confirmando el cambio de la contraseña.
@@ -59,37 +71,39 @@
 			$pass_inc="<p id=error><span>Su contraseña actual no es correcta.</span></p>";
 
 	}
-
-?>
-
-	<div class="contenido"> <!-- init contenido -->
-       
-       <h1>cambio de contraseña</h1>
-       
-       <p>Cuando el cambio se realice correctamente le enviaremos un email de confirmación.</p>
-       
-       	<form id="formulario" action="#" method="POST" enctype="multipart/form-data" >
-			<fieldset>
+	
+	
+	echo "
+		<div class='contenido'> <!-- init contenido -->
+		   
+		   <h1>cambio de contraseña</h1>
+		   
+		   <p>Cuando el cambio se realice correctamente le enviaremos un email de confirmación.</p>
+		   
+			<form id='formulario' action='#' method='POST' enctype='multipart/form-data' >
+				<fieldset>
+				<br>
+				Contraseña actual:<br>
+				<input name='pass' size='25' type='password'  autofocus required >
+				<br><br>
+				Nueva contraseña:<br>
+				<input name='pass1' size='25' type='password' value='$pass_rnd' autofocus required >
+				<br>
+				Repita la nueva contraseña:<br>
+				<input name='pass2' size='25' type='password' value='$pass_rnd' autofocus required >
+				<br><br>
+				<input name='enviar' value='Enviar' type='submit' >
+				</fieldset>
+			</form>
+			<form id='formulario' action='#' method='POST' enctype='multipart/form-data' >
+				<input name='generar' value='Generar contraseña aleatoria' type='submit' >
+			</form>
 			<br>
-			Contraseña actual:<br>
-			<input name="pass" size="25" type="text"  autofocus required >
-			<br><br>
-			Nueva contraseña:<br>
-			<input name="pass1" size="25" type="text"  autofocus required >
-			<br>
-			Repita la nueva contraseña:<br>
-			<input name="pass2" size="25" type="text"  autofocus required >
-			<br><br>
-			<input name='enviar' value="Enviar" type="submit" >
-			</fieldset>
-		</form>
-		
-		<br>
-		<!-- Muestra un mensaje de error en caso de no existir el email -->
-		<?php echo $pass_inc; echo $pass_dif; echo $ok; ?>
-	</div>		<!-- end contenido -->
+			<!-- Muestra un mensaje de error en caso de no existir el email -->
+			$pass_inc $pass_dif $ok
+		</div>		<!-- end contenido -->";
 
-<?php
+
 
 	// Cierre de conexión.
 	$mysqli->close();

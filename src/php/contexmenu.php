@@ -2,7 +2,7 @@
 
 	switch($cat)	// Se usa para poner la categoría a la que pertenece la ponencia seleccionada.
 	{				// Los links del menú contextual varíarán en función de la categoría de la ponencia.
-		case "is":	$link1="<p id=\"tipo\"><a href=\"index.php?texto=metodologias&cat=is\"><b>Metodologías Ágiles</b></a>, por M. Noguera</p>";
+		case "is":	$link1="<p id=\"tipo\"><a id=sel href=\"index.php?texto=metodologias&cat=is\"><b>Metodologías Ágiles</b></a>, por M. Noguera</p>";
 					$link2="<p id=\"tipo\"><a href=\"index.php?texto=ifml&cat=is\"><b>IFML</b></a>, por M. Cabrera</p>";
 					$link3="<p id=\"tipo\"><a href=\"index.php?texto=prince2&cat=is\"><b>Prince2</b></a>, por M.J. Rodríguez</p>";
 					$cat="ING. SOFTWARE";  break;

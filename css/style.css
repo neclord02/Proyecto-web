@@ -3,9 +3,9 @@
 
 @font-face {
 
-    font-family: masque; 
-    src: url(../fonts/masque.ttf); 
-   
+    font-family: masque;
+    src: url(../fonts/masque.ttf);
+
 }
 
 #aviso{
@@ -21,8 +21,17 @@
 		
 }
 
-body{
+b p#tipo a b{
+
+	text-decoration:none;
+	color: #FF6600;
 	
+}
+
+body{
+	 
+	font-family: ubuntu;
+    src: url(../fonts/ubuntu.ttf); 
 	background: url(../image/logo3.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
@@ -401,20 +410,38 @@ p#jus{
 	
 }
 
-.tabla3{
+.tabla3#cong{
 
 	float:left;
 	text-align:center;
-	margin: 10px 40px 10px 40px;
+	margin: 10px 10px 10px 20px;
 	border: 2px black;
     border-collapse: collapse;
-	width: 300px;
+	width: 350px;
+	
+}
+
+.tabla3#info{
+
+	float:left;
+	text-align:center;
+	margin: 10px 20px 10px 0px;
+	border: 2px black;
+    border-collapse: collapse;
+	width: 380px;
 	
 }
 
 td{
 	
 	text-align: center;
+	border: 1px solid black;
+	
+}
+
+td#info{
+	
+	text-align: left;
 	border: 1px solid black;
 	
 }
@@ -508,7 +535,7 @@ ul.puntos {
 
 .nav li ul li {
 
-	position:relative;	/* yhgygyygugygyggygy*/
+	position:relative;
 	right:40px;
 
 }
