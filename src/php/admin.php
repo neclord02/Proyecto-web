@@ -24,9 +24,9 @@
 	// Botón seleccionado.
 	if( isset( $_GET['opcion'] ) )
 	{
-		if( $_GET['opcion']==cuotas )
+		if( $_GET['opcion']=='cuotas' )
 			$c_cuo="current";
-		if( $_GET['opcion']==congresistas )
+		if( $_GET['opcion']=='congresistas' )
 			$c_con="current";
 	}
 
@@ -38,8 +38,8 @@
 		   
 			<div class=menu> <!-- Botón de volver -->
 				<ul class=nav>
-					<li class='$c_cuo' ><a href=index.php?contenido=admin&opcion=cuotas>Cuotas</a></li>
-					<li class='$c_con' ><a href=index.php?contenido=admin&opcion=congresistas>Ver congresistas</a></li>
+					<li ><a href=index.php?contenido=admin&opcion=cuotas>Cuotas</a></li>
+					<li ><a href=index.php?contenido=admin&opcion=congresistas>Ver congresistas</a></li>
 					<li><a href=index.php?contenido=pass>Cambio de contraseña</a></li>
 				</ul>
 			</div>";
