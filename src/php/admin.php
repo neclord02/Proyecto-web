@@ -20,8 +20,10 @@
 		echo "<br><br><h3 id=error>Error en la base de datos</h3><p><a href=index.php>Volver</a></p>";
 	}
 
-
+	
 	// Botón seleccionado.
+	$c_cuo="";
+	$c_con="";
 	if( isset( $_GET['opcion'] ) )
 	{
 		if( $_GET['opcion']=='cuotas' )
@@ -38,8 +40,8 @@
 		   
 			<div class=menu> <!-- Botón de volver -->
 				<ul class=nav>
-					<li ><a href=index.php?contenido=admin&opcion=cuotas>Cuotas</a></li>
-					<li ><a href=index.php?contenido=admin&opcion=congresistas>Ver congresistas</a></li>
+					<li class='$c_cuo' ><a href=index.php?contenido=admin&opcion=cuotas>Cuotas</a></li>
+					<li class='$c_con' ><a href=index.php?contenido=admin&opcion=congresistas>Ver congresistas</a></li>
 					<li><a href=index.php?contenido=pass>Cambio de contraseña</a></li>
 				</ul>
 			</div>";
@@ -174,7 +176,4 @@
 
 <?php
 
-	// Cierre de conexión.
-	$mysqli->close();
-	
-?>
+	// Cierre de conexión

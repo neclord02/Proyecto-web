@@ -72,10 +72,10 @@
 					denominacion VARCHAR ( 50 ) NOT NULL,
 					descripcion VARCHAR ( 250 ) NOT NULL,
 					importe INT ( 2 ) NOT NULL,
-					docu_con BOOLEAN DEFAULT false,
-					cert_as BOOLEAN DEFAULT false,
-					comida_cafe BOOLEAN DEFAULT false,
-					cena_gala BOOLEAN DEFAULT false
+					docu_con INT ( 2 ) DEFAULT 9,
+					cert_as INT ( 2 ) DEFAULT 29,
+					comida_cafe INT ( 2 ) DEFAULT 49,
+					cena_gala INT ( 2 ) DEFAULT 99
 					)
 					" );
 	}
@@ -95,27 +95,27 @@
 		
 		// Inscripciones hasta el 31 de Marzo.
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe ) 
-							VALUES ( 'Estudiante hasta el 31 de Marzo', '$desc_est', 279, 1, 1 )" );
+							VALUES ( 'Estudiante hasta el 31 de Marzo', '$desc_est', 279, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe, cena_gala )
-							VALUES ( 'Profesor hasta el 31 de Marzo', '$desc_prf', 399, 1, 1, 1 )" );
+							VALUES ( 'Profesor hasta el 31 de Marzo', '$desc_prf', 399, 0, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, cert_as, comida_cafe ) 
-							VALUES ( 'Invitado hasta el 31 de Marzo', '$desc_inv', 499, 1, 1, 1 )" );
+							VALUES ( 'Invitado hasta el 31 de Marzo', '$desc_inv', 499, 0, 0, 0 )" );
 		
 		// Inscripciones del 1 de Abril al 1 de Mayo.
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe ) 
-							VALUES ( 'Estudiante del 1 de Abril al 1 de Mayo', '$desc_est', 299, 1, 1 )" );
+							VALUES ( 'Estudiante del 1 de Abril al 1 de Mayo', '$desc_est', 299, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe, cena_gala )
-							VALUES ( 'Profesor del 1 de Abril al 1 de Mayo', '$desc_prf', 449, 1, 1, 1 )" );
+							VALUES ( 'Profesor del 1 de Abril al 1 de Mayo', '$desc_prf', 449, 0, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, cert_as, comida_cafe ) 
-							VALUES ( 'Invitado del 1 de Abril al 1 de Mayo', '$desc_inv', 649, 1, 1, 1 )" );
+							VALUES ( 'Invitado del 1 de Abril al 1 de Mayo', '$desc_inv', 649, 0, 0, 0 )" );
 		
 		// Inscripciones durante el congreso.
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe ) 
-							VALUES ( 'Estudiante durante el congreso', '$desc_est', 419, 1, 1 )" );
+							VALUES ( 'Estudiante durante el congreso', '$desc_est', 419, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, comida_cafe, cena_gala )
-							VALUES ( 'Profesor durante el congreso', '$desc_prf', 599, 1, 1, 1 )" );
+							VALUES ( 'Profesor durante el congreso', '$desc_prf', 599, 0, 0, 0 )" );
 		$mysqli->query( "INSERT INTO cuotas ( denominacion, descripcion, importe, docu_con, cert_as, comida_cafe ) 
-							VALUES ( 'Invitado durante el congreso', '$desc_inv', 699, 1, 1, 1 )" );
+							VALUES ( 'Invitado durante el congreso', '$desc_inv', 699, 0, 0, 0 )" );
 	}
 
 
@@ -209,12 +209,17 @@
 					tlf INT ( 10 ) NOT NULL,
 					email VARCHAR ( 50 ) NOT NULL,
 					id_cuota INT ( 2 ) NOT NULL,
+					docu_con BOOLEAN DEFAULT false,
+					cert_as BOOLEAN DEFAULT false,
+					comida_cafe BOOLEAN DEFAULT false,
+					cena_gala BOOLEAN DEFAULT false,
 					alhambra BOOLEAN DEFAULT false,
 					sierra BOOLEAN DEFAULT false,
 					hotel VARCHAR ( 50 ),
 					f_entrada DATE,
 					f_salida DATE,
-					tipo_hab BOOLEAN DEFAULT false
+					tipo_hab BOOLEAN DEFAULT false,
+					importe INT ( 3 ) NOT NULL
 					)
 					" );
 	}
