@@ -62,7 +62,8 @@
 		echo "<input type=checkbox id=cena_gala checked disabled>Cena de gala.<br>";
 	else
 		echo "<input name=cena_gala id=cena_gala type=checkbox value=$cena_gala onchange=InfoCheck(this.checked)>Cena de gala ($cena_gala €)<br>";
-		
+	
+	// ***** //
 		
 	echo	"<br><br><b>Actividades extra</b>:<br>";		
 			$consulta=$mysqli->query("SELECT denominacion,id,importe,descripcion,foto FROM actividades");
@@ -79,8 +80,7 @@
 	}
 
 	//______________En pruebas____________________
-	
-	
+			
 	if( isset( $_GET['docu_con'] ) )
 		$docu=$_GET['docu_con'];
 	else
@@ -115,8 +115,12 @@
 	//~ if( isset( $_GET['docu_con'] ) && isset( $_GET['cert_as'] ) && isset( $_GET['comida_cafe'] ) && isset( $_GET['cena_gala'] )  && isset( $_GET['a_extra0'] )  && isset( $_GET['a_extra1'] ) )
 		//~ echo "Precio total a pagar: ".$importe+$docu+$cert+$comida+$cena+$alh+$sn."<br>";
 	//~ else
-	$importe=$importe+$docu+$cert+$comida+$cena+$alh+$sn;
 	
+	// El importe no se muestra correctamente :<
+	//$importe = $_REQUEST['importe'];
+
+	$importe=$docu+$cert+$comida+$cena+$alh+$sn;
+
 	if( isset( $_GET['a_extra1'] ) )
 		echo "Precio total a pagar: ".$importe."<br>"; 
 		

@@ -21,8 +21,11 @@
 				case "inscripcion":
 				case "pass":
 				case "admin":
+				case "hoteles":
+				case "hotelseleccion":
+				case "edit":
 				case "restablecer": include("./src/php/".$contenido.".php");  break;
-		
+				
 				default:
 					include("src/html/".$contenido.".html");	// En $contenido está el nombre del archivo html a incluir,
 		}														// se le concatena la ruta y la extensión para que sea una ruta válida.

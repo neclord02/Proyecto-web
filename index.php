@@ -68,6 +68,9 @@
 			case "restablecer": ;  break;
 			case "pass": ;  break;
 			case "admin": ;  break;
+			case "hoteles": ; break;
+			case "edit": ; break;
+			case "hotelseleccion": break;
 			
 			default:
 				$contenido="index";

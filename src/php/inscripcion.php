@@ -147,13 +147,13 @@
 	
 			// Insertar los datos obtenidos en la tabla congresistas.
 			
-			if( $mysqli->query("INSERT INTO congresistas (id, nombre, apellidos, c_trabajo, tlf, email, id_cuota,
-								docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe ) VALUES 
-								( '$id', '$nombre', '$apellidos', '$c_trabajo', '$tlf', '$email', '$id_cuota', '$docu_con', '$cert_as', '$comida_cafe', '$cena_gala', '$alhambra', '$sierra', '$importe' )") )
+			if( $mysqli->query("INSERT INTO congresistas (id, nombre, apellidos, c_trabajo, tlf, email, id_cuota,docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe ) VALUES ( '$id', '$nombre', '$apellidos', '$c_trabajo', '$tlf', '$email', '$id_cuota', '$docu_con', '$cert_as', '$comida_cafe', '$cena_gala', '$alhambra', '$sierra', '$importe' );") ){
 				$info="<br><br><b>La inscripción se ha realizado correctamente.</b>";
-			else
-				$info="<br><br><b><span id=error >Error al realizar la inscripción. Inténtelo de nuevo más tarde.</span></b>";
+				$address = 'index.php?contenido=hotelseleccion&importe='.$importe.'';
+				header("Location: $address");
 				
+			}else
+				$info="<br><br><b><span id=error >Error al realizar la inscripción. Inténtelo de nuevo más tarde.</span></b>";
 		
 		}
 	}
@@ -187,6 +187,9 @@
 						<br>
 						Centro de trabajo:<br>
 							<input name=c_trabajo size=30 type=text><br>
+						<br>";
+						
+				echo "
 						<br>
 						Tipo de inscripción:<br>
 		
@@ -207,6 +210,7 @@
 					<!-- ------------------------------ -->
 						<br>
 					<input name=enviar value=Inscribirse type=submit>
+					
 					$info
 					</fieldset>
 				</form>

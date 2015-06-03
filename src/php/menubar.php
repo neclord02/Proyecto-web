@@ -35,6 +35,7 @@
 						<li><a href="index.php?contenido=contacto">CONTACTO</a></li>
 						<li><a href="index.php?contenido=patrocinio">PATROCINIO</a></li>
 						<li><a href="index.php?contenido=inscripcion">INSCRIPCION</a></li>
+                        <li><a href="index.php?contenido=hoteles">HOTELES</a></li>
 					</ul>
 				</li>
 					</ul>

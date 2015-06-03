@@ -841,3 +841,50 @@ a{
 	background-color: #FF6600;
 	
 }
+
+.hotel{
+	
+	margin: 15px;
+	padding: 10px;
+	border: 1px solid black;	
+	border-radius: 4px;
+	background: url(../image/abstract.jpg);
+	background-size: cover;
+
+}
+
+.hotel h2{
+	
+	font-family: masque;
+	color: #FF6600;
+	float: left;	
+	
+}
+
+.hotel h4{
+	
+	float: left;	
+	
+}
+	
+#imagen_hotelera{
+	
+	width: 400px;
+	height: 300px;
+	
+}
+
+#hotel_titulo{
+	
+	float:left;
+	width: 300px;	
+	
+}
+
+.formselect{
+	
+	float:right;
+	margin-bottom: 15px;
+	width: 450px;
+	
+}
