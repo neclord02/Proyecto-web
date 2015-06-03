@@ -109,3 +109,20 @@ function InfoCheck( cadena ){
 		}
     }
 
+function Buscar( cadena )
+{
+	if (cadena.length==0) { 
+		document.getElementById("busca").innerHTML="";
+		return;
+	} 
+	else {
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function() {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("busca").innerHTML=xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET","./src/php/gethint.php?busca="+cadena,true);
+		xmlhttp.send();
+	}    
+}

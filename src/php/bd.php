@@ -198,11 +198,7 @@
 	{
 		$mysqli->query( "CREATE TABLE congresistas
 				   (
-					id INT ( 3 ) auto_increment,
-					FOREIGN KEY (id) 
-						REFERENCES usuarios(id)
-						ON DELETE CASCADE
-						ON UPDATE CASCADE,
+					id INT ( 3 ) PRIMARY KEY auto_increment,
 					nombre VARCHAR ( 50 ) NOT NULL,
 					apellidos VARCHAR ( 50 ) NOT NULL,
 					c_trabajo VARCHAR ( 50 ) NOT NULL,

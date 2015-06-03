@@ -32,6 +32,7 @@
 			$c_con="current";
 	}
 
+
 	// Menú del admin.
 	echo "
 		<div class=contenido> <!-- init contenido -->
@@ -51,24 +52,28 @@
 	{
 		// Ver congresistas.
 		if( $_GET['opcion']=='congresistas' ){
-			echo "<p>&nbsp;</p>
-			
-			
+			echo "
+					<p><b>Escriba las primeras letras del nombre del congresista:</b></p>
+					<form action=> 
+					<p><input type=text onkeyup=Buscar(this.value)></p>
+					</form>
+					<p>Resultados: <span id=busca></span></p>
 				
+				<p>&nbsp;</p>
 				<table class=tabla3 id=cong>
 					<tr >
 						<th> Nombre </th>
 					</tr>
 					";
 
-					$consulta=$mysqli->query("SELECT nombre FROM congresistas");
+					$consulta=$mysqli->query("SELECT nombre, id FROM congresistas");
 					for( $i=0; $i<$consulta->num_rows; $i++ ){
 						$n=$consulta->fetch_row();
 						$tdalt="";
 						if( isset( $_GET['nombre'] ) )
 							if( $_GET['nombre']==$n[0] )
 								$tdalt="tdalt";
-						echo "<tr><td class=$tdalt><a href=index.php?contenido=admin&opcion=congresistas&nombre=$n[0]>".$n[0]."</a></td></tr>";
+						echo "<tr><td class=$tdalt><a href=index.php?contenido=admin&opcion=congresistas&nombre=$n[1]>".$n[0]."</a></td></tr>";
 					}
 			echo "
 				</table>";
@@ -84,7 +89,7 @@
 					if( isset( $_GET['nombre'] ) )
 					{
 						$nombre=$_GET['nombre'];
-						$consulta=$mysqli->query("SELECT id 'ID', nombre 'Nombre', email 'Email' FROM congresistas WHERE nombre='$nombre' ");
+						$consulta=$mysqli->query("SELECT id 'ID', nombre 'Nombre', email 'Email' FROM congresistas WHERE id='$nombre' ");
 						$i=0;
 						$n=$consulta->fetch_row();
 						$campos=$consulta->fetch_fields();
