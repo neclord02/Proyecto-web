@@ -26,9 +26,6 @@
 			<fieldset>
 			<legend>Contacto</legend>
 			<br>
-<!--
-			<input name="action" value="enviar" type="hidden">
--->
 			Su nombre:<br>
 			<input name="nombre" size="30" type="text" autofocus required ><br><br>
 			Su correo electrónico:<br>

@@ -19,7 +19,7 @@
 
 	//______________________________________________________________________________________________
 	
-	// Obtener el código de cuota de la página inscripción a traves del script "Info" 
+	// Obtener todos los nombres con sus ID`s desde la tabla congresistas.
 	$consulta=$mysqli->query("SELECT nombre, id FROM congresistas");
 	for( $i=0; $i<$consulta->num_rows; $i++ ){
 		$n=$consulta->fetch_row();
@@ -27,26 +27,26 @@
 	}
 
 
-	// get the q parameter from URL
+	// Obtener desde el script las letras a buscar.
 	$busca = $_REQUEST["busca"];
 
-	$hint = "";
+	$res = "";
 
-	// lookup all hints from array if $q is different from ""
+	// Encontrar todas las coincidencias desde el array $a[] si busca es diferente de "".
 	if ($busca !== "") {
 		$busca = strtolower($busca);
 		$len=strlen($busca);
 		foreach($a as $name) {
 			if (stristr($busca, substr($name, 0, $len))) {
-				if ($hint === "") {
-					$hint = "<a href=index.php?contenido=admin&opcion=congresistas&nombre=$name>".$name."</a>";
+				if ($res === "") {
+					$res = "<a id=no_marcar href=index.php?contenido=admin&opcion=congresistas&id=".substr($name, -2, 1).">$name</a>";
 				} else {
-					$hint .= ", <a href=index.php?contenido=admin&opcion=congresistas&nombre=$name>".$name."</a>";
+					$res .= ", <a id=no_marcar href=index.php?contenido=admin&opcion=congresistas&id=".substr($name, -2, 1).">$name</a>";
 				}
 			}
 		}
 	}
 
-	// Output "no suggestion" if no hint was found or output correct values
-	echo $hint === "" ? "no suggestion" : $hint;
+	// Imprime un mensaje si no hay coincidencias con los datos intoducidos.
+	echo $res === "" ? "<span id=error>No hay resultados</span>" : $res;
 ?> 

@@ -70,10 +70,10 @@
 					for( $i=0; $i<$consulta->num_rows; $i++ ){
 						$n=$consulta->fetch_row();
 						$tdalt="";
-						if( isset( $_GET['nombre'] ) )
-							if( $_GET['nombre']==$n[0] )
+						if( isset( $_GET['id'] ) )
+							if( $_GET['id']==$n[1] )
 								$tdalt="tdalt";
-						echo "<tr><td class=$tdalt><a href=index.php?contenido=admin&opcion=congresistas&nombre=$n[1]>".$n[0]."</a></td></tr>";
+						echo "<tr><td class=$tdalt><a id=no_marcar_n href=index.php?contenido=admin&opcion=congresistas&id=$n[1]>".$n[0]."</a></td></tr>";
 					}
 			echo "
 				</table>";
@@ -86,10 +86,48 @@
 					<tr>
 					<td id=info>
 					";
-					if( isset( $_GET['nombre'] ) )
-					{
-						$nombre=$_GET['nombre'];
-						$consulta=$mysqli->query("SELECT id 'ID', nombre 'Nombre', email 'Email' FROM congresistas WHERE id='$nombre' ");
+					if( isset( $_GET['id'] ) )
+					{								// Obtener todos los datos desde las tablas de la bd
+						$id=$_GET['id'];
+						$consulta=$mysqli->query( "SELECT congresistas.id 'ID', congresistas.nombre 'Nombre',
+													congresistas.apellidos 'Apellidos', congresistas.c_trabajo 'Centro de trabajo',
+													congresistas.tlf 'Teléfono', congresistas.email 'Email', cuotas.denominacion 'Cuota',
+													(CASE congresistas.docu_con
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.docu_con 
+													END) 'Documentación para el congreso',
+													(CASE congresistas.cert_as
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.cert_as 
+													END) 'Certificado de asistencia',
+													(CASE congresistas.comida_cafe
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.comida_cafe 
+													END) 'Comidas y meriendas',
+													(CASE congresistas.cena_gala
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.cena_gala 
+													END) 'Cena de gala',
+													(CASE congresistas.alhambra
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.alhambra 
+													END) 'Visita a la Alhambra',
+													(CASE congresistas.sierra
+														WHEN  0 THEN 'incluido en cuota' 
+														WHEN -1 THEN 'no seleccionado' 
+														ELSE congresistas.sierra 
+													END) 'Excursión a Sierra Nevada',
+													congresistas.importe 'Importe total'
+													FROM congresistas INNER JOIN cuotas 
+													ON congresistas.id_cuota=cuotas.id 
+													INNER JOIN actividades 
+													ON 1=actividades.id
+													WHERE congresistas.id='$id' " );
 						$i=0;
 						$n=$consulta->fetch_row();
 						$campos=$consulta->fetch_fields();

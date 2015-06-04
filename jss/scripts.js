@@ -99,7 +99,9 @@ function InfoCheck( cadena ){
 		else
 			var a_extra1="a_extra1=0";	
 			
-		xmlhttp.open( "GET","./src/php/info.php?"+a_extra0+"&"+a_extra1+"&"+docu_con+"&"+cert_as+"&"+comida_cafe+"&"+cena_gala, true );
+		var importes="importes="+document.getElementById("importes").value;
+			
+		xmlhttp.open( "GET","./src/php/info.php?"+a_extra0+"&"+a_extra1+"&"+docu_con+"&"+cert_as+"&"+comida_cafe+"&"+cena_gala+"&"+importes, true );
 
 		xmlhttp.send();
 		xmlhttp.onreadystatechange = function() {
@@ -122,7 +124,7 @@ function Buscar( cadena )
 				document.getElementById("busca").innerHTML=xmlhttp.responseText;
 			}
 		}
-		xmlhttp.open("GET","./src/php/gethint.php?busca="+cadena,true);
+		xmlhttp.open("GET","./src/php/buscar.php?busca="+cadena,true);
 		xmlhttp.send();
 	}    
 }

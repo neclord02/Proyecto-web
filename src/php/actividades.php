@@ -55,7 +55,8 @@
 		
         <?php
 		
-			if( $_SESSION['admin'] ){
+			if( isset( $_SESSION['admin'] ) ){
+				if( $_SESSION['admin']==1 )
 				
 				echo "<a href='index.php?contenido=edit&file=".$contenido."'><div id='boton_editar'> EDITAR </div></a>";	
 				

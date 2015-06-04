@@ -74,25 +74,25 @@
 		
 		else{
 			
-			if( isset( $_POST['id'] ) )
-				$id=$_POST['id'];
-			else
-				$id=0;
+			//~ if( isset( $_POST['id'] ) )
+				//~ $id=$_POST['id'];
+			//~ else
+				//~ $id=0;
 			
 			if( isset( $_POST['nombre'] ) )
 				$nombre=$_POST['nombre'];
 			else
-				$nombre=0;
+				$nombre="";
 			
 			if( isset( $_POST['apellidos'] ) )
 				$apellidos=$_POST['apellidos'];
 			else
-				$apellidos=0;
+				$apellidos="";
 			
 			if( isset( $_POST['email'] ) )
 				$email=$_POST['email'];
 			else
-				$email=0;	
+				$email="";	
 				
 			if( isset( $_POST['c_trabajo'] ) )
 				$c_trabajo=$_POST['c_trabajo'];
@@ -102,7 +102,7 @@
 			if( isset( $_POST['tlf'] ) )
 				$tlf=$_POST['tlf'];
 			else
-				$tlf=0;
+				$tlf="";
 			
 			if( isset( $_POST['id_cuota'] ) )
 				$id_cuota=$_POST['id_cuota'];
@@ -112,42 +112,45 @@
 			if( isset( $_POST['docu_con'] ) )
 				$docu_con=$_POST['docu_con'];
 			else
-				$docu_con=0;
+				$docu_con=-1;
 			
 			if( isset( $_POST['cert_as'] ) )
 				$cert_as=$_POST['cert_as'];
 			else
-				$cert_as=0;
+				$cert_as=-1;
 			
 			if( isset( $_POST['comida_cafe'] ) )
 				$comida_cafe=$_POST['comida_cafe'];
 			else
-				$comida_cafe=0;
+				$comida_cafe=-1;
 
 			if( isset( $_POST['cena_gala'] ) )
 				$cena_gala=$_POST['cena_gala'];
 			else
-				$cena_gala=0;		
+				$cena_gala=-1;		
 			
 			if( isset( $_POST['a_extra0'] ) )
 				$alhambra=$_POST['a_extra0'];
 			else
-				$alhambra=0;
+				$alhambra=-1;
 			
 			if( isset( $_POST['a_extra1'] ) )
 				$sierra=$_POST['a_extra1'];
 			else
-				$sierra=0;
+				$sierra=-1;
 			
 			if( isset( $_POST['importe'] ) )
 				$importe=$_POST['importe'];
 			else
-				$importe=0;				
+				$importe=-1;				
 	
 	
 			// Insertar los datos obtenidos en la tabla congresistas.
 			
-			if( $mysqli->query("INSERT INTO congresistas ( nombre, apellidos, c_trabajo, tlf, email, id_cuota,docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe ) VALUES ( '$nombre', '$apellidos', '$c_trabajo', '$tlf', '$email', '$id_cuota', '$docu_con', '$cert_as', '$comida_cafe', '$cena_gala', '$alhambra', '$sierra', '$importe' );") ){
+			if( $mysqli->query("INSERT INTO congresistas ( nombre, apellidos, c_trabajo, tlf, email, id_cuota,
+								docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe ) 
+								VALUES ( '$nombre', '$apellidos', '$c_trabajo', '$tlf', '$email', '$id_cuota',
+								'$docu_con', '$cert_as', '$comida_cafe', '$cena_gala', '$alhambra', '$sierra', '$importe' );") ){
 				$info="<br><br><b>La inscripción se ha realizado correctamente.</b>";
 				$address = 'index.php?contenido=hotelseleccion&importe='.$importe.'';
 				header("Location: $address");

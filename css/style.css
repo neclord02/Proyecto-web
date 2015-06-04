@@ -8,6 +8,34 @@
 
 }
 
+a#no_marcar{
+
+	text-decoration: none;
+	color: #FF6600;
+
+}
+
+a#no_marcar_n{
+
+	text-decoration: none;
+	color: black;
+
+}
+
+a:visited#no_marcar{
+
+	text-decoration: none;
+	color: #FF6600;
+
+}
+
+a:visited#no_marcar_n{
+
+	text-decoration: none;
+	color: black;
+
+}
+
 #act0{
 
 	width: 180px;

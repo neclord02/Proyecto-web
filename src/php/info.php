@@ -35,31 +35,40 @@
 	$comida_cafe=$n[4];
 	$cena_gala=$n[5];
 	
+			
+	//~ <input type=hidden name=id_cuota value=$cuota >
+	//~ <input type=hidden name=importe value=$importe >
+	
 	echo "	<br>Descripción: 
 			<br><textarea rows=3 cols=60 readonly>$descripcion</textarea><br>
 			<br><b>Servicios incluidos</b>:<br>
+			<input type=hidden name=importes id=importes value=$importe>";
 			
-			<input type=hidden name=id_cuota value=$cuota >
-			<input type=hidden name=importe value=$importe >";
-			
-			
-	if( !$docu_con )
+	if( !$docu_con ){
 		echo "<input type=checkbox id=docu_con checked disabled>Documentacón para el congreso.<br>";
+		echo "<input type=hidden id=docu_con name=docu_con value=0 />";
+	}
 	else
 		echo "<input name=docu_con id=docu_con type=checkbox value=$docu_con onchange=InfoCheck(this.checked)>Documentacón para el congreso ($docu_con €)<br>";
 		
-	if( !$cert_as )
+	if( !$cert_as ){
 		echo "<input type=checkbox id=cert_as checked disabled>Certificado de asistencia.<br>";
+		echo "<input type=hidden id=cert_as name=cert_as value=0 />";
+	}
 	else
 		echo "<input name=cert_as id=cert_as type=checkbox value=$cert_as onchange=InfoCheck(this.checked)>Certificado de asistencia ($cert_as €)<br>";
 	
-	if( !$comida_cafe )
+	if( !$comida_cafe ){
 		echo "<input type=checkbox id=comida_cafe checked disabled>Almuerzos y meriendas.<br>";
+		echo "<input type=hidden id=comida_cafe name=comida_cafe value=0 />";
+	}
 	else
 		echo "<input name=comida_cafe id=comida_cafe type=checkbox value=$comida_cafe onchange=InfoCheck(this.checked)>Almuerzos y meriendas ($comida_cafe €)<br>";
 	
-	if( !$cena_gala )
+	if( !$cena_gala ){
 		echo "<input type=checkbox id=cena_gala checked disabled>Cena de gala.<br>";
+		echo "<input type=hidden id=cena_gala name=cena_gala value=0 />";
+	}
 	else
 		echo "<input name=cena_gala id=cena_gala type=checkbox value=$cena_gala onchange=InfoCheck(this.checked)>Cena de gala ($cena_gala €)<br>";
 	
@@ -79,7 +88,8 @@
 			
 	}
 
-	//______________En pruebas____________________
+	//______________Precio total a pagar____________________
+	
 			
 	if( isset( $_GET['docu_con'] ) )
 		$docu=$_GET['docu_con'];
@@ -111,18 +121,18 @@
 	else
 		$sn=0;
 	
+	if( isset( $_GET['importes'] ) )
+		$importes=$_GET['importes'];
+	else
+		$importes=0;
 	
-	//~ if( isset( $_GET['docu_con'] ) && isset( $_GET['cert_as'] ) && isset( $_GET['comida_cafe'] ) && isset( $_GET['cena_gala'] )  && isset( $_GET['a_extra0'] )  && isset( $_GET['a_extra1'] ) )
-		//~ echo "Precio total a pagar: ".$importe+$docu+$cert+$comida+$cena+$alh+$sn."<br>";
+	// Suma total de los servicios adquiridos.
+	$importe=$importes+$docu+$cert+$comida+$cena+$alh+$sn;
+
+	if( isset( $_GET['docu_con'] ) )
+		echo "Precio total a pagar:<b> ".$importe." €</b><br>"; 
 	//~ else
-	
-	// El importe no se muestra correctamente :<
-	//$importe = $_REQUEST['importe'];
-
-	$importe=$docu+$cert+$comida+$cena+$alh+$sn;
-
-	if( isset( $_GET['a_extra1'] ) )
-		echo "Precio total a pagar: ".$importe."<br>"; 
+		//~ echo "Precio total a pagar: ".$importe."<br>"; 
 		
 
 			

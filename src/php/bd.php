@@ -202,7 +202,7 @@
 					nombre VARCHAR ( 50 ) NOT NULL,
 					apellidos VARCHAR ( 50 ) NOT NULL,
 					c_trabajo VARCHAR ( 50 ) NOT NULL,
-					tlf INT ( 10 ) NOT NULL,
+					tlf VARCHAR ( 10 ) NOT NULL,
 					email VARCHAR ( 50 ) NOT NULL,
 					id_cuota INT ( 2 ) NOT NULL,
 					docu_con BOOLEAN DEFAULT false,
@@ -211,10 +211,6 @@
 					cena_gala BOOLEAN DEFAULT false,
 					alhambra BOOLEAN DEFAULT false,
 					sierra BOOLEAN DEFAULT false,
-					hotel VARCHAR ( 50 ),
-					f_entrada DATE,
-					f_salida DATE,
-					tipo_hab BOOLEAN DEFAULT false,
 					importe INT ( 3 ) NOT NULL
 					)
 					" );
@@ -228,12 +224,20 @@
 	if( !$filas )
 	{
 	
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
-							VALUES ( 's@localhost.dev', 'pepe' )" );
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
-							VALUES ( 'juan@hotmail.com', 'juan' )" );
-		$mysqli->query( "INSERT INTO congresistas ( email, nombre ) 
-							VALUES ( 'laura@yahoo.es', 'laura' )" );
+		$mysqli->query( "INSERT INTO congresistas ( nombre, apellidos, c_trabajo, tlf, email, id_cuota,
+						docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe )
+							VALUES ( 'José', 'Sánchez', 'ugr', '745885566', 'josesan@ugr.dev', '1',
+									'0', '-1', '0', '-1', '-1', '50', '329' )" );
+									
+		$mysqli->query( "INSERT INTO congresistas ( nombre, apellidos, c_trabajo, tlf, email, id_cuota,
+						docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe )
+							VALUES ( 'Laura', 'Martínez', 'CETIC', '848659874', 'laura@cetic.dev', '3',
+									'0', '0', '0', '99', '40', '-1', '638' )" );
+									
+		$mysqli->query( "INSERT INTO congresistas ( nombre, apellidos, c_trabajo, tlf, email, id_cuota,
+						docu_con, cert_as, comida_cafe, cena_gala, alhambra, sierra, importe )
+							VALUES ( 'Paco', 'Rodríguez', 'IBM', '147582896', 'pacoro@ibm.dev', '5',
+									'0', '-1', '0', '0', '-1', '50', '499' )" );
 	}
 	
 	
